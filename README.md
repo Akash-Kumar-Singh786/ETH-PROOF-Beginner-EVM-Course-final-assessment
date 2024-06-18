@@ -1,8 +1,60 @@
-We start by declaring the version of Solidity we are using and the license of the contract.
-Next, we define our contract named MyToken. We declare three public variables: name, symbol, and totalSupply. 
-These will store the token's name, its abbreviation, and the total supply of tokens respectively.We then create a mapping to store the balance of each address. 
-This mapping is called balances and it maps an address to a uint, which represents the balance of that address."Here is our mint function. 
-This function takes an address and a value as parameters. It increases the totalSupply by the given value and also increases the balance of the specified address by the same amount. 
-Finally, it emits a Mint event.Next, we have the burn function. This function also takes an address and a value as parameters.
-It first checks if the balance of the given address is greater than or equal to the value to be burned using the require statement. 
-If this condition is met, it decreases the totalSupply and the balance of the specified address by the given value. It also emits a Burn event.
+# Project Title
+
+MyToken Contract.
+
+## Description
+
+The MyToken contract is a simple token on the Ethereum blockchain. It can create new tokens (mint) and destroy existing ones (burn). The contract keeps track of the total supply of tokens and the balances of each address.
+
+## Getting Started
+
+### Installing
+
+To use this contract, we will need:
+- An Ethereum development environment like [Remix IDE](https://remix.ethereum.org/).
+
+### Executing program
+
+To deploy and interact with the MyToken contract, follow these steps:
+
+1. **Open Remix IDE or your preferred Ethereum development environment.**
+2. **Create a new file and paste the contract code**
+3. **Compile the contract.**
+4. **Deploy the contract to your desired Ethereum network.**
+5. **Interact with the contract using the deployed contract's interface:**
+    - To mint tokens, call the `mint` function with the address and the amount to mint:
+      
+      function mint(address _adrs , uint _value) public {
+        totalSupply += _value;
+        balances[_adrs] += _value;
+    }
+
+      
+    - To burn tokens, call the `burn` function with the address and the amount to burn:
+      
+       function burn(address _adrs , uint _value) public {
+
+        if (balances[_adrs] >= _value) {
+            totalSupply -= _value;
+            balances[_adrs] -= _value;
+
+        }
+
+    }
+
+  
+### Help
+
+- Ensure that your Ethereum node or provider is running and properly connected.
+- Verify that the address provided for minting or burning has the appropriate balance.
+
+
+## Authors
+
+- **Akash Kumar Singh**
+  - GitHub: [GitHubHandle](https://github.com/Akash-Kumar-Singh786/ETH-PROOF-Beginner-EVM-Course-final-assessment/tree/main)
+  - Email: [email](akashkumarsingh203@gmail.com)
+
+## License
+
+This project is licensed under the MIT License - for details see the LICENSE.md file .
